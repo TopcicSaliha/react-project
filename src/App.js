@@ -1,70 +1,33 @@
-import { useState } from "react";
-import "./style.css";
+import Expenses from "./components/Expenses/Expenses";
 
-const content = [
-  [
-    "React is extremely popular",
-    "It makes building complex, interactive UIs a breeze",
-    "It's powerful & flexible",
-    "It has a very active and versatile ecosystem",
-  ],
-  [
-    "Components, JSX & Props",
-    "State",
-    "Hooks (e.g., useEffect())",
-    "Dynamic rendering",
-  ],
-  [
-    "Official web page (react.dev)",
-    "Next.js (Fullstack framework)",
-    "React Native (build native mobile apps with React)",
-  ],
-];
-
-export default function App() {
-  const [activeContentIndex, setActiveContentIndex] = useState(0);
-
+function App() {
+  const expenses = [
+    {
+      id: "e1",
+      title: "Toilet Paper",
+      amount: 94.12,
+      date: new Date(2020, 7, 14),
+    },
+    { id: "e2", title: "New TV", amount: 799.49, date: new Date(2021, 2, 12) },
+    {
+      id: "e3",
+      title: "Car Insurance",
+      amount: 294.67,
+      date: new Date(2021, 2, 28),
+    },
+    {
+      id: "e4",
+      title: "New Desk (Wooden)",
+      amount: 450,
+      date: new Date(2021, 5, 12),
+    },
+  ];
   return (
     <div>
-      <header>
-        <img src="react-logo.png" alt="Raect Logo" />
-        <div>
-          <h1>React.js</h1>
-          <p>i.e., using the React library for rendering the UI</p>
-        </div>
-      </header>
-
-      <div id="tabs">
-        <menu>
-          <button
-            className={activeContentIndex === 0 ? "active" : ""}
-            onClick={() => setActiveContentIndex(0)}
-          >
-            Why React?
-          </button>
-
-          <button
-            className={activeContentIndex === 1 ? "active" : ""}
-            onClick={() => setActiveContentIndex(1)}
-          >
-            Core Features
-          </button>
-
-          <button
-            className={activeContentIndex === 2 ? "active" : ""}
-            onClick={() => setActiveContentIndex(2)}
-          >
-            Related Resources
-          </button>
-        </menu>
-        <div id="tab-content">
-          <ul>
-            {content[activeContentIndex].map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <h2>Let's get started!</h2>
+      <Expenses items={expenses} />
     </div>
   );
 }
+
+export default App;
