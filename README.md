@@ -4,4 +4,4 @@ The useState hook is utilized to manage the selected filter year state. Dates ar
 
 Domain: https://react-project-five-cyan.vercel.app/
 
-![Model](expenses.png)
+
